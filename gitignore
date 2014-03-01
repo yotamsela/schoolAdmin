@@ -3,4 +3,5 @@
 .classpath
 *.class
 /bin/
-.metadata
+*.metadata/
+tempProject/
