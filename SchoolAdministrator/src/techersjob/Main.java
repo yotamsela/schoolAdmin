@@ -2,9 +2,6 @@ package techersjob;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -27,8 +24,6 @@ public class Main {
 		System.out.println("start");
 		String pathname = "temp.xlsx";
 		File file = new File(pathname);
-		//		OutputStream out = new BufferedOutputStream(new FileOutputStream(outF));
-		//		XSSFWorkbook newWorkbok = new XSSFWorkbook();
 
 		XSSFWorkbook workbook = ExcellReaderAndWriter.openXlsxFile(file);
 		XSSFSheet sheet = workbook.getSheetAt(1);
@@ -36,15 +31,14 @@ public class Main {
 		double frontalSum = getFrontalSum(sheet,hativaType);
 		double gmolSum = getGmolSum(sheet,hativaType);
 		int teachersAge = getTeacherAge(sheet);
+		boolean isMothertoChileover14 = getIsMothertoChileover14(sheet);
 		boolean perticipateinozTmura = getIsPerticipatesInosTmura(sheet);
-		boolean isMothertoChileover14 = getIsMothertoChileover14(sheet); 
-
-
+		 
 		System.out.println("frontal: "+frontalSum);
 		System.out.println("gmol: "+gmolSum);
 		System.out.println("age: "+teachersAge);
-		System.out.println("participates in Oz Tmura: "+perticipateinozTmura);
 		System.out.println("mother to child over 14: "+isMothertoChileover14);
+		System.out.println("participates in Oz Tmura: "+perticipateinozTmura);
 
 		Writer.write(workbook, "temp.xlsx");
 		System.out.println("end");
