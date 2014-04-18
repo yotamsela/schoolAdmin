@@ -26,7 +26,15 @@ public class Main {
 		
 		TeacherAttributes teacherAttributes = TeacherAttributes.extractDatafromSheet(sheet, hativaType);
 		
+		ITeacherTable teacherHoursOz = new TeacherHoursOz();
 		
+		teacherHoursOz.extractFromExelToTxtFile("ozTmura.xlsx");
+		
+		teacherHoursOz.initTableFromfile("ozTmura.txt");
+		
+		
+		
+		//TODO: set the tab name for the file.
 		
 		
 

@@ -19,9 +19,7 @@ public class TeacherAttributes {
 	private int teacherAge;
 	private boolean ozTmura;
 	private boolean childOver14;
-	
-	
-	
+
 	private TeacherAttributes(double frontalHours, double gmol, int teacherAge,
 			boolean ozTmura, boolean childOver14) {
 		this.frontalHours = frontalHours;
@@ -29,6 +27,26 @@ public class TeacherAttributes {
 		this.teacherAge = teacherAge;
 		this.ozTmura = ozTmura;
 		this.childOver14 = childOver14;
+	}
+	
+	public double getFrontalHours() {
+		return frontalHours;
+	}
+
+	public double getGmol() {
+		return gmol;
+	}
+
+	public int getTeacherAge() {
+		return teacherAge;
+	}
+
+	public boolean isOzTmura() {
+		return ozTmura;
+	}
+
+	public boolean isChildOver14() {
+		return childOver14;
 	}
 
 	public static TeacherAttributes extractDatafromSheet(XSSFSheet sheet,HATIVA hativaType){
