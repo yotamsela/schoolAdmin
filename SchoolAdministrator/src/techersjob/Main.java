@@ -23,7 +23,10 @@ public class Main {
 		XSSFSheet sheet = workbook.getSheetAt(1);
 		HATIVA hativaType = HATIVA.UPPER;
 		
+		
 		TeacherAttributes teacherAttributes = TeacherAttributes.extractDatafromSheet(sheet, hativaType);
+		
+		
 		
 		
 
